@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fuck You Boric</title>
+
+    <style>
+      body {
+        background: black;
+        color: #00ff66;
+        font-family:
+          Courier New,
+          monospace;
+        overflow: hidden;
+        text-align: center;
+      }
+
+      /* 🔥 Blinking Warning */
+      .warning {
+        color: red;
+        font-size: 24px;
+        animation: blink 0.8s infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      /* 🧧 Red Packet Rain */
+      .packet {
+        position: fixed;
+        top: -50px;
+        color: red;
+        font-size: 22px;
+        animation: fall linear infinite;
+      }
+      @keyframes fall {
+        to {
+          transform: translateY(110vh);
+        }
+      }
+
+      /* 🎇 Firecracker */
+      .fire {
+        color: orange;
+        font-size: 22px;
+        animation: fireblink 0.5s infinite;
+      }
+      @keyframes fireblink {
+        50% {
+          color: yellow;
+        }
+      }
+
+      /* 💻 Terminal box */
+      .terminal {
+        margin-top: 20px;
+        white-space: pre-line;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="warning">⚠ Fuck You Boric ⚠</div>
+
+    <pre style="color: #00ff66; font-size: 14px">
+
+                🐉 DRAGON FIREWALL 🐉
+
+                     / \  //\
+        |\___/|      /   \//  .\
+        /O  O  \__  /    //  | \ \
+       /     /  \/_/    //   |  \  \
+       @_^_@'/   \/_   //    |   \   \
+       //_^_/     \/_ //     |    \    \
+    ( //) |        \///      |     \     \
+  ( / /) _|_ /   )  //       |      \      \
+ ( // /) '/,_ _ _/  ( ; -.    |    _ _\.-~        .-~~~^-.
+(( / / )) ,-{        _      `-.|.-~-.           .~         `.
+(( // / ))  '/\      /                 ~-. _ .-~      .-~^-.  \
+(( /// ))      `.   {            }                   /      \  \
+ (( / ))     .----~-.\        \-'                 .~         \  `. \^-.
+            ///.----..>        \             _ -~             `.  ^-`  ^-_
+              ///-._ _ _ _ _ _ _}^ - - - - ~                     ~-- ,.-~
+</pre
+    >
+
+    <div class="terminal" id="terminal"></div>
+
+    <div class="fire">🎇 🎆 🎇 FIRECRACKER ACTIVATED 🎇 🎆 🎇</div>
+
+    <script>
+      /* 💻 Fake Typing Effect */
+      const text = `
+[ BOOTING LUNAR OS... ]
+[ CONNECTING TO DRAGON SERVER... ]
+[ SCANNING BAD LUCK VIRUS... ]
+[ DELETING MISFORTUNE.EXE ✓ ]
+[ INSTALLING WEALTH.PACKAGE ✓ ]
+[ HEALTH.DLL LOADED ✓ ]
+[ HAPPINESS MODE ACTIVATED 🧧 ]
+`;
+
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          document.getElementById("terminal").innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, 40);
+        }
+      }
+      type();
+
+      /* 🧧 Red Packet Rain Generator */
+      function createPacket() {
+        const packet = document.createElement("div");
+        packet.classList.add("packet");
+        packet.innerHTML = "🧧";
+        packet.style.left = Math.random() * 100 + "vw";
+        packet.style.animationDuration = 3 + Math.random() * 5 + "s";
+        document.body.appendChild(packet);
+        setTimeout(() => {
+          packet.remove();
+        }, 8000);
+      }
+      setInterval(createPacket, 500);
+    </script>
+  </body>
+</html>
